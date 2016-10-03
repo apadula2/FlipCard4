@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  CardFlip2
 //
-//  Created by Joel Hollingsworth on 9/14/16.
-//  Copyright © 2016 Joel Hollingsworth. All rights reserved.
+//  Copyright © 2016 Alexis Padula. All rights reserved.
 //
 
 import UIKit
@@ -30,7 +29,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var card4_2: UIImageView!
     @IBOutlet weak var card4_3: UIImageView!
     @IBOutlet weak var card4_4: UIImageView!
-
+    
     // create the Model
     var matchGame = MatchGame()
     
@@ -55,7 +54,7 @@ class ViewController: UIViewController {
         
         // which UIImageView was tapped?
         let card = sender.view! as! UIImageView
-    
+        
         var which = -1
         
         // which card (in the array) was tapped?
@@ -64,13 +63,20 @@ class ViewController: UIViewController {
                 which = i
             }
         }
-    
+        
         if (which > -1) {
             // tell the model which card to flip
             matchGame.flipCardUp(which)
             
+            
             // update the UIImageViews from the Model
+            // changes ghosted cards to opaque
+            
             for i in 0..<imageViews.count {
+                let state = matchGame.getState(i)
+                if(state == 3){
+                    imageViews[i].alpha = 0.5
+                }
                 imageViews[i].image = matchGame.getImage(i)
             }
             
@@ -82,7 +88,18 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    // restarts game and view
     @IBAction func playAgainBtn(_ sender: UIButton) {
         matchGame = MatchGame()
+        for i in 0..<imageViews.count {
+            imageViews[i].image = matchGame.getImage(i)
+            imageViews[i].alpha = 1
+        }
+        
+        // update the Labels from the Model
+        flipsLabel.text = "Flips: \(matchGame.flips)"
+        scoreLabel.text = "Score: \(matchGame.score)"
+        messageAreaLabel.text = matchGame.message
     }
 }

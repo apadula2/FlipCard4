@@ -2,8 +2,8 @@
 //  MatchGame.swift
 //  CardFlip2
 //
-//  Created by Joel Hollingsworth on 9/26/16.
-//  Copyright © 2016 Joel Hollingsworth. All rights reserved.
+//
+//  Copyright © 2016 Alexis Padula. All rights reserved.
 //
 
 import UIKit
@@ -48,6 +48,7 @@ class MatchGame {
             
             if (previous != -1) {
                 
+                //checks for match of suit
                 if matrix[which].suit == matrix[previous].suit{
                     matrix[which].state = .ghosted
                     matrix[previous].state = .ghosted
@@ -56,6 +57,8 @@ class MatchGame {
                     score += 4
                     message = "Suit Match"
                 }
+                    
+                    //checks for match of value
                 else if matrix[which].value == matrix[previous].value{
                     matrix[which].state = .ghosted
                     matrix[previous].state = .ghosted
@@ -64,27 +67,33 @@ class MatchGame {
                     score += 16
                     message = "Value Match"
                 }
-               else{
-                // flip over the previous card
-                matrix[previous].isShowing = false
-                previous = which
-            }
+                else{
+                    // flip over the previous card
+                    matrix[previous].isShowing = false
+                    previous = which
+                }
             }
             // remember the last card tapped
             
             if(!match){
-            previous = which
-            score -= 1
+                previous = which
+                score -= 1
             }
-        match = false
+            match = false
         }
     }
+    
     
     /*
      * Return the current image for a particular Card
      */
     func getImage(_ which: Int) -> UIImage {
+        
         return matrix[which].getImage()
+    }
+    
+    func getState(_ which :Int) -> Int{
+        return matrix[which].state.rawValue
     }
     
     

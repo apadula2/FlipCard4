@@ -2,8 +2,7 @@
 //  Deck.swift
 //  CardFlip2
 //
-//  Created by Joel Hollingsworth on 9/21/16.
-//  Copyright © 2016 Joel Hollingsworth. All rights reserved.
+//  Copyright © 2016 Alexis Padula. All rights reserved.
 //
 
 import Foundation
@@ -16,10 +15,12 @@ class Card {
     var value: String
     var suit: String
     var isShowing: Bool
-    enum CardState {
-        case up
-        case down
-        case ghosted
+    
+    //Keeps track of card status
+    enum CardState: Int{
+        case up = 1
+        case down = 2
+        case ghosted = 3
     }
     
     var state: CardState = .down
@@ -43,6 +44,9 @@ class Card {
             return backImage
         }
     }
+    
+    
+    
 }
 
 

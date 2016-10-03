@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -195,9 +195,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOo-hr-ghZ">
-                                <frame key="frameInset" minX="152" minY="610" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOo-hr-ghZ">
                                 <state key="normal" title="Play Again"/>
                                 <connections>
                                     <action selector="playAgainBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p4D-t2-5tJ"/>
@@ -210,12 +208,16 @@
                             <constraint firstItem="1v9-YE-4Uf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1fA-kp-rOF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1v9-YE-4Uf" secondAttribute="trailing" id="1iv-I3-Ha8"/>
                             <constraint firstItem="UVn-Aw-YcG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4kN-Hl-Lui"/>
+                            <constraint firstItem="XOo-hr-ghZ" firstAttribute="top" secondItem="rIk-PJ-7Sc" secondAttribute="bottom" constant="17" id="KLg-Nc-4ca"/>
                             <constraint firstItem="rIk-PJ-7Sc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OLP-ua-I8g"/>
                             <constraint firstItem="UVn-Aw-YcG" firstAttribute="top" secondItem="1v9-YE-4Uf" secondAttribute="bottom" constant="8" id="VtT-My-sgY"/>
                             <constraint firstItem="Kaj-GV-tge" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="W6p-dN-nxS"/>
                             <constraint firstItem="vz3-8J-GwM" firstAttribute="top" secondItem="UVn-Aw-YcG" secondAttribute="bottom" constant="8" id="XQp-JI-0Al"/>
                             <constraint firstItem="UVn-Aw-YcG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="YyP-oy-xNJ"/>
                             <constraint firstItem="ARn-pt-2Hd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="aMl-Ky-EoZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XOo-hr-ghZ" secondAttribute="trailing" constant="136" id="b3M-hV-z7g"/>
+                            <constraint firstItem="XOo-hr-ghZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="136" id="cnP-xN-YaD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XOo-hr-ghZ" secondAttribute="bottom" constant="27" id="cpm-Dc-uzB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XgZ-cG-Gxz" secondAttribute="trailing" id="csF-9l-5xZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kaj-GV-tge" secondAttribute="trailing" id="ghj-Da-Dfz"/>
                             <constraint firstItem="vz3-8J-GwM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gv4-Da-yMW"/>
